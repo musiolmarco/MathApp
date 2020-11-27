@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mathapp/widgets/calculator/calculator_display.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override
@@ -9,7 +10,26 @@ class _CalculatorPageState extends State<CalculatorPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Text('Calculator Page'),
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: CalculatorDisplay(
+
+              ),
+            ),
+
+            Expanded(
+              flex: 4,
+              child: Container(
+                color: Colors.yellow,
+              ),
+            ),
+          ],
+        ),
+      )
     );
   }
 }
