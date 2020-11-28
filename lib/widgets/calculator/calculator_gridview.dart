@@ -13,8 +13,13 @@ class CalculatorGridview extends StatelessWidget {
 
   ];
 
+  final List _redButtons = [
+    "÷", "+" ,"-", "=", "C", "(", ")", "x",
+  ];
+
   @override
   Widget build(BuildContext context) {
+
     return GridView.builder(
         itemCount: _buttons.length,
         physics: new NeverScrollableScrollPhysics(),
@@ -24,10 +29,19 @@ class CalculatorGridview extends StatelessWidget {
         crossAxisSpacing: 10,
         childAspectRatio: 1.2),
         itemBuilder: (context, index) {
+
+          Color color;
+
+          if(_redButtons.contains(_buttons[index])){
+            color = Color.fromRGBO(200, 0, 0, 0.3);
+          }else{
+            color = Color.fromRGBO(0, 0, 0, 0.3);
+          }
+
           return CalculatorButton(
               pressed: () {},
               displayValue: _buttons[index],
-          color: Color.fromRGBO(0, 0, 0, 0.3),);
+              color: color,);
         });
   }
 }
