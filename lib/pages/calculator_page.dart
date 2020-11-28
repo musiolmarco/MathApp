@@ -10,8 +10,8 @@ class CalculatorPage extends StatefulWidget {
 
 class _CalculatorPageState extends State<CalculatorPage> {
 
-  Color gradientBlue = Color(0xff97D9E1);
-  Color gradientPurple = Color(0xffD9AFD9);
+  Color gradientBlue = Color(0xff6a3093);
+  Color gradientPurple = Color(0xffa044ff);
 
   @override
   Widget build(BuildContext context) {

@@ -14,8 +14,11 @@ class CalculatorGridview extends StatelessWidget {
   ];
 
   final List _redButtons = [
-    "÷", "+" ,"-", "=", "C", "(", ")", "x",
+    "÷", "+" ,"-", "=", "(", ")", "x",
   ];
+
+  final Color purpleColor = new Color(0xff4c207a);
+  final Color grayButtonColor = new Color(0xffdedede);
 
   @override
   Widget build(BuildContext context) {
@@ -31,17 +34,24 @@ class CalculatorGridview extends StatelessWidget {
         itemBuilder: (context, index) {
 
           Color color;
+          Color textColor;
 
           if(_redButtons.contains(_buttons[index])){
-            color = Color.fromRGBO(200, 0, 0, 0.3);
-          }else{
-            color = Color.fromRGBO(0, 0, 0, 0.3);
+            color = purpleColor;
+            textColor = Colors.white;
+          }else if(_buttons[index] == "C"){
+            color = Colors.redAccent;
+            textColor = Colors.white;
+        }else{
+            color = grayButtonColor;
+            textColor = Colors.black;
           }
 
           return CalculatorButton(
               pressed: () {},
               displayValue: _buttons[index],
-              color: color,);
+              color: color,
+          textColor: textColor,);
         });
   }
 }

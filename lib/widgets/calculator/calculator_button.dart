@@ -4,8 +4,9 @@ class CalculatorButton extends StatelessWidget {
   final Function pressed;
   final String displayValue;
   final Color color;
+  final Color textColor;
 
-  CalculatorButton({@required this.pressed, @required this.displayValue, @required this.color});
+  CalculatorButton({@required this.pressed, @required this.displayValue, @required this.color, @required this.textColor});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class CalculatorButton extends StatelessWidget {
             child: Text(
               displayValue,
               style: TextStyle(
-                color: Colors.white,
+                color: textColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 20,
               ),
