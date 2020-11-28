@@ -17,10 +17,12 @@ class CalculatorGridview extends StatelessWidget {
   Widget build(BuildContext context) {
     return GridView.builder(
         itemCount: _buttons.length,
+        physics: new NeverScrollableScrollPhysics(),
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
         mainAxisSpacing: 10,
-        childAspectRatio: 1.3),
+        crossAxisSpacing: 10,
+        childAspectRatio: 1.2),
         itemBuilder: (context, index) {
           return CalculatorButton(
               pressed: () {},
