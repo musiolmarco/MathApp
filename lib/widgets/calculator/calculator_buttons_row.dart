@@ -4,21 +4,20 @@ import 'calculator_button.dart';
 
 class CalculatorButtonsRow extends StatelessWidget {
 
-  final Color _purpleColor = new Color(0xff4c207a);
-  final Color _grayButtonColor = new Color(0xffdedede);
 
-  final CalculatorButton button1;
-  final CalculatorButton button2;
-  final CalculatorButton button3;
-  final CalculatorButton button4;
+  final List<CalculatorButton> buttonList;
 
-  CalculatorButtonsRow({@required this.button1, @required this.button2, @required this.button3, @required this.button4});
+  CalculatorButtonsRow({@required this.buttonList});
 
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          button1, button2, button3, button4,
+          buttonList[0],
+          buttonList[1],
+          buttonList[2],
+          buttonList[3],
     ]);
   }
 }
