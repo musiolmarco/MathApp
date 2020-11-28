@@ -10,13 +10,13 @@ class CalculatorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => pressed(),
-      child: Container(
-        color: Colors.white,
-        child: Text('Test', style: TextStyle(
-          color: Colors.black,
-        ),),
-      ),
+        onTap: () => pressed(),
+        child: Container(
+          color: Colors.white,
+          child: Text(displayValue, style: TextStyle(
+            color: Colors.black,
+          ),),
+        ),
     );
   }
 }

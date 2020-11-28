@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mathapp/widgets/calculator/calculator_button.dart';
 
 class CalculatorGridview extends StatelessWidget {
 
@@ -14,8 +15,16 @@ class CalculatorGridview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-    );
+    return GridView.builder(
+        itemCount: _buttons.length,
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 4,
+        mainAxisSpacing: 10,
+        childAspectRatio: 1.3),
+        itemBuilder: (context, index) {
+          return CalculatorButton(
+              pressed: () {},
+              displayValue: _buttons[index]);
+        });
   }
 }

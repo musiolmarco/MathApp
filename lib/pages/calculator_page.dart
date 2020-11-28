@@ -17,15 +17,14 @@ class _CalculatorPageState extends State<CalculatorPage> {
           child: Column(
             children: [
               Expanded(
-                flex: 2,
                 child: CalculatorDisplay(),
               ),
               Expanded(
-                flex: 4,
-                child: CalculatorGridview(
-
+                flex: 2,
+                child: Container(
+                  child: CalculatorGridview(),
                 ),
-              )
+              ),
             ],
           ),
         ));
