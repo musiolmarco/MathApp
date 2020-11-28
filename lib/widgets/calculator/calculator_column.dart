@@ -7,16 +7,6 @@ class CalculatorColumn extends StatelessWidget {
   static Color purpleButtonColor = new Color(0xff4c207a);
   static Color grayButtonColor = new Color(0xffdedede);
 
-  final List _buttons = [
-
-    'C', '(', ')', '÷',
-    '7', '8', '9', '+',
-    '4', '5', '6', '-',
-    '1', '2', '3', 'x',
-    '0', ',', '+/-', '=',
-
-  ];
-
 
   final List<CalculatorButton> _buttonRow1 = [
     CalculatorButton(pressed: (){}, displayValue: "C", color: Colors.redAccent, textColor: Colors.white),
