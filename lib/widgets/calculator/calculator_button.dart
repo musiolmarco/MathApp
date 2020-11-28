@@ -11,6 +11,8 @@ class CalculatorButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 75,
+      width: 75,
       decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.all(Radius.circular(20))),

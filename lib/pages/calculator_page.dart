@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mathapp/widgets/calculator/calculator_button.dart';
 import 'package:mathapp/widgets/calculator/calculator_display.dart';
-import 'package:mathapp/widgets/calculator/calculator_gridview.dart';
+import 'package:mathapp/widgets/calculator/calculator_column.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override
