@@ -10,7 +10,7 @@ class CalculatorButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: Colors.redAccent,
+          color: new Color.fromRGBO(255, 255, 255, 0.3),
           borderRadius: BorderRadius.all(Radius.circular(20))),
       child: GestureDetector(
         onTap: () => pressed(),
