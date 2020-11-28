@@ -26,7 +26,8 @@ class CalculatorGridview extends StatelessWidget {
         itemBuilder: (context, index) {
           return CalculatorButton(
               pressed: () {},
-              displayValue: _buttons[index]);
+              displayValue: _buttons[index],
+          color: Color.fromRGBO(0, 0, 0, 0.3),);
         });
   }
 }

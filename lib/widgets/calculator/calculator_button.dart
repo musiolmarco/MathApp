@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 class CalculatorButton extends StatelessWidget {
   final Function pressed;
   final String displayValue;
+  final Color color;
 
-  CalculatorButton({@required this.pressed, @required this.displayValue});
+  CalculatorButton({@required this.pressed, @required this.displayValue, @required this.color});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          color: new Color.fromRGBO(255, 255, 255, 0.3),
+          color: color,
           borderRadius: BorderRadius.all(Radius.circular(20))),
       child: GestureDetector(
         onTap: () => pressed(),
