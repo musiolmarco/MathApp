@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mathapp/widgets/calculator/calculator_button.dart';
 import 'package:mathapp/widgets/calculator/calculator_buttons_row.dart';
 
-class CalculatorGridview extends StatelessWidget {
+class CalculatorColumn extends StatelessWidget {
 
   static Color purpleButtonColor = new Color(0xff4c207a);
   static Color grayButtonColor = new Color(0xffdedede);

@@ -32,7 +32,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   flex: 2,
                   child: Container(
                     padding: EdgeInsets.all(10.0),
-                    child: CalculatorGridview(),
+                    child: CalculatorColumn(),
                   ),
                 ),
               ],
