@@ -9,23 +9,34 @@ class CalculatorPage extends StatefulWidget {
 }
 
 class _CalculatorPageState extends State<CalculatorPage> {
+
+  Color gradientBlue = Color(0xff97D9E1);
+  Color gradientPurple = Color(0xffD9AFD9);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black,
-        body: SafeArea(
-          child: Column(
-            children: [
-              Expanded(
-                child: CalculatorDisplay(),
-              ),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  child: CalculatorGridview(),
+        body: Container(
+          decoration: BoxDecoration(
+              gradient: LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomLeft,
+                  colors: [gradientBlue, gradientPurple])),
+          child: SafeArea(
+            child: Column(
+              children: [
+                Expanded(
+                  child: CalculatorDisplay(),
                 ),
-              ),
-            ],
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                    padding: EdgeInsets.all(5.0),
+                    child: CalculatorGridview(),
+                  ),
+                ),
+              ],
+            ),
           ),
         ));
   }
