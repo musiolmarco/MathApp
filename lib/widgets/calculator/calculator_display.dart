@@ -9,7 +9,6 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.purple,
       child: Align(
         alignment: Alignment.bottomRight,
         child: Padding(
@@ -19,6 +18,7 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
             style: TextStyle(
               fontSize: 60,
               color: Colors.white,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
