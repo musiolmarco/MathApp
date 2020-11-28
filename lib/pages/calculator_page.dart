@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mathapp/widgets/calculator/calculator_button.dart';
 import 'package:mathapp/widgets/calculator/calculator_display.dart';
+import 'package:mathapp/widgets/calculator/calculator_gridview.dart';
 
 class CalculatorPage extends StatefulWidget {
   @override
@@ -19,10 +20,12 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 flex: 2,
                 child: CalculatorDisplay(),
               ),
-              CalculatorButton(
-                pressed: () {},
-                displayValue: '',
-              ),
+              Expanded(
+                flex: 4,
+                child: CalculatorGridview(
+
+                ),
+              )
             ],
           ),
         ));
