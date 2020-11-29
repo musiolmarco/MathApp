@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
 class CalculatorDisplay extends StatefulWidget {
+
+  String calculationString;
+
+  CalculatorDisplay({@required this.calculationString});
+
   @override
   _CalculatorDisplayState createState() => _CalculatorDisplayState();
 }
@@ -17,7 +22,7 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
         child: Padding(
           padding: const EdgeInsets.all(30.0),
           child: Text(
-            '0',
+            widget.calculationString,
             style: TextStyle(
               fontSize: 60,
               color: Colors.white,

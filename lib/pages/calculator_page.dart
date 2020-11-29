@@ -35,7 +35,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
             child: Column(
               children: [
                 Expanded(
-                  child: CalculatorDisplay(),
+                  child: CalculatorDisplay(
+                    calculationString: calculationString,
+                  ),
                 ),
                 Expanded(
                   flex: 2,
