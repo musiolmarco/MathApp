@@ -45,18 +45,21 @@ class _CalculatorPageState extends State<CalculatorPage> {
   }
 
   void buttonPressed(String value) {
+    removeErrorMessage();
     setState(() {
       calculationString += value;
     });
   }
 
   void clearButtonPressed() {
+    removeErrorMessage();
     setState(() {
       calculationString = "";
     });
   }
 
   void removeLastCharacter() {
+    removeErrorMessage();
     setState(() {
       try {
         calculationString =
