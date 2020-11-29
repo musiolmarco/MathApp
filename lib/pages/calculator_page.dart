@@ -10,72 +10,79 @@ class CalculatorPage extends StatefulWidget {
 }
 
 class _CalculatorPageState extends State<CalculatorPage> {
-
   Color gradientBlue = Color(0xff6a3093);
   Color gradientPurple = Color(0xffa044ff);
 
   String calculationString = "";
 
-  void calculateButtonPressed(){
+  void calculateButtonPressed() {
+    String calculation = replaceOperators(calculationString);
+
     Parser p = Parser();
-    Expression exp = p.parse(calculationString);
+    Expression exp = p.parse(calculation);
 
     ContextModel cm = ContextModel();
     double eval = exp.evaluate(EvaluationType.REAL, cm);
-
 
     setState(() {
       calculationString = eval.toString();
     });
   }
 
-  void buttonPressed(String value){
+  void buttonPressed(String value) {
     setState(() {
       calculationString += value;
     });
   }
 
-  void clearButtonPressed(){
+  void clearButtonPressed() {
     setState(() {
       calculationString = "";
     });
   }
 
-  bool checkIfNumberIsInt(num value){
+  bool checkIfNumberIsInt(num value) {
     return value is int || value == value.roundToDouble();
+  }
+
+  String replaceOperators(String value) {
+    value = value.replaceAll('x', '*');
+    value = value.replaceAll('÷', '/');
+
+    return value;
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Container(
-          decoration: BoxDecoration(
-              gradient: LinearGradient(
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomLeft,
-                  colors: [gradientBlue, gradientPurple])),
-          child: SafeArea(
-            child: Column(
-              children: [
-                Expanded(
-                  child: CalculatorDisplay(
-                    calculationString: calculationString,
-                  ),
-                ),
-                Expanded(
-                  flex: 2,
-                  child: Container(
-                    padding: EdgeInsets.all(10.0),
-                    child: CalculatorColumn(
-                      clearButtonPressed: clearButtonPressed,
-                      buttonPressed: buttonPressed,
-                      calculateButtonPressed: calculateButtonPressed,
-                    ),
-                  ),
-                ),
-              ],
+      decoration: BoxDecoration(
+          gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomLeft,
+              colors: [gradientBlue, gradientPurple])),
+      child: SafeArea(
+        child: Column(
+          children: [
+            Expanded(
+              child: CalculatorDisplay(
+                calculationString: calculationString,
+              ),
             ),
-          ),
-        ));
+            Expanded(
+              flex: 2,
+              child: Container(
+                padding: EdgeInsets.all(10.0),
+                child: CalculatorColumn(
+                  clearButtonPressed: clearButtonPressed,
+                  buttonPressed: buttonPressed,
+                  calculateButtonPressed: calculateButtonPressed,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    ));
   }
 }
