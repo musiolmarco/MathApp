@@ -25,7 +25,7 @@ class CalculatorButton extends StatelessWidget {
       child: Material(
         child: InkWell(
           borderRadius: BorderRadius.all(Radius.circular(20)),
-          onTap: () => pressed(),
+          onTap: () => pressed(displayValue),
           child: Center(
             child: Text(
               displayValue,

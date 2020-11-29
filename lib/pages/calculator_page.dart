@@ -13,6 +13,15 @@ class _CalculatorPageState extends State<CalculatorPage> {
   Color gradientBlue = Color(0xff6a3093);
   Color gradientPurple = Color(0xffa044ff);
 
+  String calculationString = "";
+
+  void buttonPressed(String value){
+    setState(() {
+      calculationString += value;
+    });
+    print(calculationString);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +41,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   flex: 2,
                   child: Container(
                     padding: EdgeInsets.all(10.0),
-                    child: CalculatorColumn(),
+                    child: CalculatorColumn(
+                      buttonPressed: buttonPressed,
+                    ),
                   ),
                 ),
               ],

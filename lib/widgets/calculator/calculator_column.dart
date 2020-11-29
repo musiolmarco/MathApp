@@ -13,38 +13,40 @@ class CalculatorColumn extends StatelessWidget {
   List<CalculatorButton> buttonRow4;
   List<CalculatorButton> buttonRow5;
 
-  CalculatorColumn(){
+  final Function buttonPressed;
+
+  CalculatorColumn({@required this.buttonPressed}){
     buttonRow1 = [
       CalculatorButton(pressed: (){}, displayValue: "C", color: Colors.redAccent, textColor: Colors.white),
-      CalculatorButton(pressed: (){}, displayValue: "(", color: purpleButtonColor, textColor: Colors.white),
-      CalculatorButton(pressed: (){}, displayValue: ")", color: purpleButtonColor, textColor: Colors.white),
-      CalculatorButton(pressed: (){}, displayValue: "÷", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: buttonPressed, displayValue: "(", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: buttonPressed, displayValue: ")", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: buttonPressed, displayValue: "÷", color: purpleButtonColor, textColor: Colors.white),
     ];
 
     buttonRow2 = [
-      CalculatorButton(pressed: (){}, displayValue: "7", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "8", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "9", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "+", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: buttonPressed, displayValue: "7", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "8", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "9", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "+", color: purpleButtonColor, textColor: Colors.white),
     ];
 
     buttonRow3 = [
-      CalculatorButton(pressed: (){}, displayValue: "4", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "5", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "6", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "-", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: buttonPressed, displayValue: "4", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "5", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "6", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "-", color: purpleButtonColor, textColor: Colors.white),
     ];
 
     buttonRow4 = [
-      CalculatorButton(pressed: (){}, displayValue: "1", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "2", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "3", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "x", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: buttonPressed, displayValue: "1", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "2", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "3", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "x", color: purpleButtonColor, textColor: Colors.white),
     ];
 
     buttonRow5 = [
-      CalculatorButton(pressed: (){}, displayValue: "0", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: ",", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "0", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: ",", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: (){}, displayValue: "+/-", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: (){}, displayValue: "=", color: purpleButtonColor, textColor: Colors.white),
     ];
