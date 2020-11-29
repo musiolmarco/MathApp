@@ -49,6 +49,15 @@ class _CalculatorPageState extends State<CalculatorPage> {
       calculationString = "";
     });
   }
+  
+  void removeLastCharacter(){
+    setState(() {
+      try {
+        calculationString =
+            calculationString.substring(0, calculationString.length - 1);
+      }catch (e){}
+    });
+  }
 
   bool checkIfNumberIsInt(num value) {
     return value is int || value == value.roundToDouble();
@@ -86,6 +95,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   clearButtonPressed: clearButtonPressed,
                   buttonPressed: buttonPressed,
                   calculateButtonPressed: calculateButtonPressed,
+                  removeLastCharacter: removeLastCharacter,
                 ),
               ),
             ),

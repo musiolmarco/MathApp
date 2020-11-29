@@ -16,13 +16,14 @@ class CalculatorColumn extends StatelessWidget {
   final Function buttonPressed;
   final Function clearButtonPressed;
   final Function calculateButtonPressed;
+  final Function removeLastCharacter;
 
-  CalculatorColumn({@required this.buttonPressed, @required this.clearButtonPressed, @required this.calculateButtonPressed}){
+  CalculatorColumn({@required this.buttonPressed, @required this.clearButtonPressed, @required this.calculateButtonPressed, @required this.removeLastCharacter}){
     buttonRow1 = [
       CalculatorButton(pressed: clearButtonPressed, displayValue: "C", color: Colors.redAccent, textColor: Colors.white),
       CalculatorButton(pressed: buttonPressed, displayValue: "(", color: purpleButtonColor, textColor: Colors.white),
       CalculatorButton(pressed: buttonPressed, displayValue: ")", color: purpleButtonColor, textColor: Colors.white),
-      CalculatorButton(pressed: (){}, displayValue: "«", color: Colors.redAccent, textColor: Colors.white),
+      CalculatorButton(pressed: removeLastCharacter, displayValue: "«", color: Colors.redAccent, textColor: Colors.white),
     ];
 
     buttonRow2 = [
