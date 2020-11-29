@@ -7,41 +7,48 @@ class CalculatorColumn extends StatelessWidget {
   static Color purpleButtonColor = new Color(0xff4c207a);
   static Color grayButtonColor = new Color(0xffdedede);
 
+  List<CalculatorButton> buttonRow1;
+  List<CalculatorButton> buttonRow2;
+  List<CalculatorButton> buttonRow3;
+  List<CalculatorButton> buttonRow4;
+  List<CalculatorButton> buttonRow5;
 
-  final List<CalculatorButton> _buttonRow1 = [
-    CalculatorButton(pressed: (){}, displayValue: "C", color: Colors.redAccent, textColor: Colors.white),
-    CalculatorButton(pressed: (){}, displayValue: "(", color: purpleButtonColor, textColor: Colors.white),
-    CalculatorButton(pressed: (){}, displayValue: ")", color: purpleButtonColor, textColor: Colors.white),
-    CalculatorButton(pressed: (){}, displayValue: "÷", color: purpleButtonColor, textColor: Colors.white),
-  ];
+  CalculatorColumn(){
+    buttonRow1 = [
+      CalculatorButton(pressed: (){}, displayValue: "C", color: Colors.redAccent, textColor: Colors.white),
+      CalculatorButton(pressed: (){}, displayValue: "(", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: (){}, displayValue: ")", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: (){}, displayValue: "÷", color: purpleButtonColor, textColor: Colors.white),
+    ];
 
-  final List<CalculatorButton> _buttonRow2 = [
-    CalculatorButton(pressed: (){}, displayValue: "7", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "8", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "9", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "+", color: purpleButtonColor, textColor: Colors.white),
-  ];
+    buttonRow2 = [
+      CalculatorButton(pressed: (){}, displayValue: "7", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "8", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "9", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "+", color: purpleButtonColor, textColor: Colors.white),
+    ];
 
-  final List<CalculatorButton> _buttonRow3 = [
-    CalculatorButton(pressed: (){}, displayValue: "4", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "5", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "6", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "-", color: purpleButtonColor, textColor: Colors.white),
-  ];
+    buttonRow3 = [
+      CalculatorButton(pressed: (){}, displayValue: "4", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "5", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "6", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "-", color: purpleButtonColor, textColor: Colors.white),
+    ];
 
-  final List<CalculatorButton> _buttonRow4 = [
-    CalculatorButton(pressed: (){}, displayValue: "1", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "2", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "3", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "x", color: purpleButtonColor, textColor: Colors.white),
-  ];
+    buttonRow4 = [
+      CalculatorButton(pressed: (){}, displayValue: "1", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "2", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "3", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "x", color: purpleButtonColor, textColor: Colors.white),
+    ];
 
-  final List<CalculatorButton> _buttonRow5 = [
-    CalculatorButton(pressed: (){}, displayValue: "0", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: ",", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "+/-", color: Colors.white, textColor: Colors.black),
-    CalculatorButton(pressed: (){}, displayValue: "=", color: purpleButtonColor, textColor: Colors.white),
-  ];
+    buttonRow5 = [
+      CalculatorButton(pressed: (){}, displayValue: "0", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: ",", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "+/-", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: (){}, displayValue: "=", color: purpleButtonColor, textColor: Colors.white),
+    ];
+  }
 
 
   @override
@@ -51,19 +58,19 @@ class CalculatorColumn extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
           CalculatorButtonsRow(
-            buttonList: _buttonRow1,
+            buttonList: buttonRow1,
           ),
         CalculatorButtonsRow(
-          buttonList: _buttonRow2,
+          buttonList: buttonRow2,
         ),
         CalculatorButtonsRow(
-          buttonList: _buttonRow3,
+          buttonList: buttonRow3,
         ),
         CalculatorButtonsRow(
-          buttonList: _buttonRow4,
+          buttonList: buttonRow4,
         ),
         CalculatorButtonsRow(
-          buttonList: _buttonRow5,
+          buttonList: buttonRow5,
         ),
       ],
     );
