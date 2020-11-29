@@ -21,12 +21,15 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
         alignment: Alignment.bottomRight,
             child: Padding(
               padding: const EdgeInsets.all(30.0),
-              child: Text(
-                widget.calculationString,
-                style: TextStyle(
-                  fontSize: 60,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Text(
+                  widget.calculationString,
+                  style: TextStyle(
+                    fontSize: 60,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
