@@ -48,7 +48,7 @@ class CalculatorColumn extends StatelessWidget {
 
     buttonRow5 = [
       CalculatorButton(pressed: buttonPressed, displayValue: "0", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: buttonPressed, displayValue: ",", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: ".", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: (){}, displayValue: "+/-", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: calculateButtonPressed, displayValue: "=", color: Colors.green , textColor: Colors.white),
     ];
