@@ -15,8 +15,9 @@ class CalculatorColumn extends StatelessWidget {
 
   final Function buttonPressed;
   final Function clearButtonPressed;
+  final Function calculateButtonPressed;
 
-  CalculatorColumn({@required this.buttonPressed, @required this.clearButtonPressed}){
+  CalculatorColumn({@required this.buttonPressed, @required this.clearButtonPressed, @required this.calculateButtonPressed}){
     buttonRow1 = [
       CalculatorButton(pressed: clearButtonPressed, displayValue: "C", color: Colors.redAccent, textColor: Colors.white),
       CalculatorButton(pressed: buttonPressed, displayValue: "(", color: purpleButtonColor, textColor: Colors.white),
@@ -49,7 +50,7 @@ class CalculatorColumn extends StatelessWidget {
       CalculatorButton(pressed: buttonPressed, displayValue: "0", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: buttonPressed, displayValue: ",", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: (){}, displayValue: "+/-", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "=", color: Colors.green , textColor: Colors.white),
+      CalculatorButton(pressed: calculateButtonPressed, displayValue: "=", color: Colors.green , textColor: Colors.white),
     ];
   }
 
