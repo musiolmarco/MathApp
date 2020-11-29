@@ -22,7 +22,7 @@ class CalculatorColumn extends StatelessWidget {
       CalculatorButton(pressed: clearButtonPressed, displayValue: "C", color: Colors.redAccent, textColor: Colors.white),
       CalculatorButton(pressed: buttonPressed, displayValue: "(", color: purpleButtonColor, textColor: Colors.white),
       CalculatorButton(pressed: buttonPressed, displayValue: ")", color: purpleButtonColor, textColor: Colors.white),
-      CalculatorButton(pressed: buttonPressed, displayValue: "÷", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: (){}, displayValue: "«", color: Colors.redAccent, textColor: Colors.white),
     ];
 
     buttonRow2 = [
@@ -49,7 +49,7 @@ class CalculatorColumn extends StatelessWidget {
     buttonRow5 = [
       CalculatorButton(pressed: buttonPressed, displayValue: "0", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: buttonPressed, displayValue: ".", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "+/-", color: Colors.white, textColor: Colors.black),
+      CalculatorButton(pressed: buttonPressed, displayValue: "÷", color: purpleButtonColor, textColor: Colors.white),
       CalculatorButton(pressed: calculateButtonPressed, displayValue: "=", color: Colors.green , textColor: Colors.white),
     ];
   }

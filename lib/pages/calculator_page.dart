@@ -23,6 +23,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
     ContextModel cm = ContextModel();
     double eval = exp.evaluate(EvaluationType.REAL, cm);
 
+
     setState(() {
       calculationString = eval.toString();
     });
@@ -38,6 +39,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
     setState(() {
       calculationString = "";
     });
+  }
+
+  bool checkIfNumberIsInt(num value){
+    return value is int || value == value.roundToDouble();
   }
 
   @override
