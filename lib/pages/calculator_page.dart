@@ -14,28 +14,34 @@ class _CalculatorPageState extends State<CalculatorPage> {
   Color gradientPurple = Color(0xffa044ff);
 
   String calculationString = "";
+  String errorMessage = "";
 
   void calculateButtonPressed() {
+    removeErrorMessage();
     String calculation = replaceOperators(calculationString);
 
     Parser p = Parser();
-    Expression exp = p.parse(calculation);
+    Expression exp;
+    try {
+      exp = p.parse(calculation);
 
-    ContextModel cm = ContextModel();
-    double eval = exp.evaluate(EvaluationType.REAL, cm);
+      ContextModel cm = ContextModel();
+      double eval = exp.evaluate(EvaluationType.REAL, cm);
 
-    var result;
+      var result;
 
-    if(checkIfNumberIsInt(eval)){
-      result = eval.toInt();
-    }else{
-      result = eval;
+      if (checkIfNumberIsInt(eval)) {
+        result = eval.toInt();
+      } else {
+        result = eval;
+      }
+
+      setState(() {
+        calculationString = result.toString();
+      });
+    } catch (e) {
+      changeErrorMessage('An error has ocurred. Please check your entry.');
     }
-
-
-    setState(() {
-      calculationString = result.toString();
-    });
   }
 
   void buttonPressed(String value) {
@@ -49,13 +55,13 @@ class _CalculatorPageState extends State<CalculatorPage> {
       calculationString = "";
     });
   }
-  
-  void removeLastCharacter(){
+
+  void removeLastCharacter() {
     setState(() {
       try {
         calculationString =
             calculationString.substring(0, calculationString.length - 1);
-      }catch (e){}
+      } catch (e) {}
     });
   }
 
@@ -68,6 +74,18 @@ class _CalculatorPageState extends State<CalculatorPage> {
     value = value.replaceAll('÷', '/');
 
     return value;
+  }
+
+  void removeErrorMessage() {
+    setState(() {
+      errorMessage = "";
+    });
+  }
+
+  void changeErrorMessage(String error) {
+    setState(() {
+      errorMessage = error;
+    });
   }
 
   @override
@@ -87,6 +105,13 @@ class _CalculatorPageState extends State<CalculatorPage> {
                 calculationString: calculationString,
               ),
             ),
+            if (errorMessage != "")
+              Text(
+                errorMessage,
+                style: TextStyle(
+                  color: Colors.white,
+                ),
+              ),
             Expanded(
               flex: 2,
               child: Container(

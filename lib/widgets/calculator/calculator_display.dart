@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CalculatorDisplay extends StatefulWidget {
 
-  String calculationString;
+  final String calculationString;
 
   CalculatorDisplay({@required this.calculationString});
 
@@ -19,17 +19,17 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
     return Container(
       child: Align(
         alignment: Alignment.bottomRight,
-        child: Padding(
-          padding: const EdgeInsets.all(30.0),
-          child: Text(
-            widget.calculationString,
-            style: TextStyle(
-              fontSize: 60,
-              color: Colors.white,
-              fontWeight: FontWeight.bold,
+            child: Padding(
+              padding: const EdgeInsets.all(30.0),
+              child: Text(
+                widget.calculationString,
+                style: TextStyle(
+                  fontSize: 60,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
-          ),
-        ),
       ),
     );
   }
