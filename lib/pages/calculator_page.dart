@@ -24,8 +24,17 @@ class _CalculatorPageState extends State<CalculatorPage> {
     ContextModel cm = ContextModel();
     double eval = exp.evaluate(EvaluationType.REAL, cm);
 
+    var result;
+
+    if(checkIfNumberIsInt(eval)){
+      result = eval.toInt();
+    }else{
+      result = eval;
+    }
+
+
     setState(() {
-      calculationString = eval.toString();
+      calculationString = result.toString();
     });
   }
 
