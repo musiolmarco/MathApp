@@ -49,7 +49,7 @@ class CalculatorColumn extends StatelessWidget {
       CalculatorButton(pressed: buttonPressed, displayValue: "0", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: buttonPressed, displayValue: ",", color: Colors.white, textColor: Colors.black),
       CalculatorButton(pressed: (){}, displayValue: "+/-", color: Colors.white, textColor: Colors.black),
-      CalculatorButton(pressed: (){}, displayValue: "=", color: purpleButtonColor, textColor: Colors.white),
+      CalculatorButton(pressed: (){}, displayValue: "=", color: Colors.green, textColor: Colors.white),
     ];
   }
 
