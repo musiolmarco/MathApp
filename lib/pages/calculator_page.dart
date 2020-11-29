@@ -19,7 +19,12 @@ class _CalculatorPageState extends State<CalculatorPage> {
     setState(() {
       calculationString += value;
     });
-    print(calculationString);
+  }
+
+  void clearButtonPressed(){
+    setState(() {
+      calculationString = "";
+    });
   }
 
   @override
@@ -44,6 +49,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
                   child: Container(
                     padding: EdgeInsets.all(10.0),
                     child: CalculatorColumn(
+                      clearButtonPressed: clearButtonPressed,
                       buttonPressed: buttonPressed,
                     ),
                   ),
