@@ -15,15 +15,15 @@ class CalculatorButton extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
     final heigth = MediaQuery.of(context).size.height;
 
-    return Container(
-      height: heigth * 0.105,
-      width: width * 0.2,
       decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.all(Radius.circular(20))),
-      child: GestureDetector(
+    return GestureDetector(
         onTap: () => pressed(),
         child: Container(
+          height: heigth * 0.105,
+          width: width * 0.2,
+          decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.all(Radius.circular(20))),
           child: Center(
             child: Text(
               displayValue,
@@ -34,7 +34,6 @@ class CalculatorButton extends StatelessWidget {
               ),
             ),
           ),
-        ),
       ),
     );
   }
