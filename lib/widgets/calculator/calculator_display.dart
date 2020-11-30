@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 class CalculatorDisplay extends StatefulWidget {
 
   final String calculationString;
+  final ScrollController scrollController;
 
-  CalculatorDisplay({@required this.calculationString});
+  CalculatorDisplay({@required this.calculationString, @required this.scrollController});
 
   @override
   _CalculatorDisplayState createState() => _CalculatorDisplayState();
@@ -22,6 +23,7 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
             child: Padding(
               padding: const EdgeInsets.all(30.0),
               child: SingleChildScrollView(
+                controller: widget.scrollController,
                 scrollDirection: Axis.horizontal,
                 child: Text(
                   widget.calculationString,

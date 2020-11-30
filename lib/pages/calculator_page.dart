@@ -13,6 +13,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
   Color gradientBlue = Color(0xff6a3093);
   Color gradientPurple = Color(0xffa044ff);
 
+  ScrollController scrollController = new ScrollController();
+
   String calculationString = "";
   String errorMessage = "";
 
@@ -106,6 +108,7 @@ class _CalculatorPageState extends State<CalculatorPage> {
             Expanded(
               child: CalculatorDisplay(
                 calculationString: calculationString,
+                scrollController: scrollController,
               ),
             ),
             if (errorMessage != "")
