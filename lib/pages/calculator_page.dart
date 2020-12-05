@@ -51,6 +51,11 @@ class _CalculatorPageState extends State<CalculatorPage> {
     setState(() {
       calculationString += value;
     });
+
+    scrollController.animateTo(
+        scrollController.position.maxScrollExtent,
+        duration: Duration(milliseconds: 200),
+        curve: Curves.ease);
   }
 
   void clearButtonPressed() {
