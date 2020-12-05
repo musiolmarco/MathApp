@@ -22,15 +22,18 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
         alignment: Alignment.bottomRight,
             child: Padding(
               padding: const EdgeInsets.fromLTRB(3,0,15,10),
-              child: SingleChildScrollView(
-                controller: widget.scrollController,
-                scrollDirection: Axis.horizontal,
-                child: Text(
-                  widget.calculationString,
-                  style: TextStyle(
-                    fontSize: 60,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+              child: Scrollbar(
+                thickness: 1,
+                child: SingleChildScrollView(
+                  controller: widget.scrollController,
+                  scrollDirection: Axis.horizontal,
+                  child: Text(
+                    widget.calculationString,
+                    style: TextStyle(
+                      fontSize: 60,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ),
