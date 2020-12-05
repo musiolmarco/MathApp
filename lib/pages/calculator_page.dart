@@ -44,6 +44,11 @@ class _CalculatorPageState extends State<CalculatorPage> {
     } catch (e) {
       changeErrorMessage('An error has ocurred. Please check your entry.');
     }
+
+    scrollController.animateTo(
+        scrollController.position.minScrollExtent,
+        duration: Duration(milliseconds: 200),
+        curve: Curves.ease);
   }
 
   void buttonPressed(String value) {
@@ -52,8 +57,10 @@ class _CalculatorPageState extends State<CalculatorPage> {
       calculationString += value;
     });
 
+    final double factor = MediaQuery.of(context).size.width * 0.1;
+
     scrollController.animateTo(
-        scrollController.position.maxScrollExtent,
+        scrollController.position.maxScrollExtent + factor,
         duration: Duration(milliseconds: 200),
         curve: Curves.ease);
   }
