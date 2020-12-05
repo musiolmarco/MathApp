@@ -45,10 +45,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
       changeErrorMessage('An error has ocurred. Please check your entry.');
     }
 
-    scrollController.animateTo(
-        scrollController.position.minScrollExtent,
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease);
+    scrollToFirstNumber();
+
   }
 
   void buttonPressed(String value) {
@@ -57,12 +55,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
       calculationString += value;
     });
 
-    final double factor = MediaQuery.of(context).size.width * 0.1;
+    scrollToLastNumber();
 
-    scrollController.animateTo(
-        scrollController.position.maxScrollExtent + factor,
-        duration: Duration(milliseconds: 200),
-        curve: Curves.ease);
   }
 
   void clearButtonPressed() {
@@ -103,6 +97,20 @@ class _CalculatorPageState extends State<CalculatorPage> {
     setState(() {
       errorMessage = error;
     });
+  }
+
+  void scrollToLastNumber(){
+    final double factor = MediaQuery.of(context).size.width * 0.1;
+
+    scrollController.animateTo(
+        scrollController.position.maxScrollExtent + factor,
+        duration: Duration(milliseconds: 200),
+        curve: Curves.ease);
+  }
+
+  void scrollToFirstNumber(){
+    scrollController.animateTo(scrollController.position.minScrollExtent,
+        duration: Duration(milliseconds: 200), curve: Curves.ease);
   }
 
   @override
