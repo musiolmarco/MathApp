@@ -21,7 +21,7 @@ class _CalculatorDisplayState extends State<CalculatorDisplay> {
       child: Align(
         alignment: Alignment.bottomRight,
             child: Padding(
-              padding: const EdgeInsets.fromLTRB(0,0,15,10),
+              padding: const EdgeInsets.fromLTRB(3,0,15,10),
               child: SingleChildScrollView(
                 controller: widget.scrollController,
                 scrollDirection: Axis.horizontal,
