@@ -21,14 +21,18 @@ class CalculatorButton extends StatelessWidget {
       height: heigth * 0.105,
       width: width * 0.2,
       decoration: BoxDecoration(
-          color: color, borderRadius: BorderRadius.all(Radius.circular(20))),
+        color: color,
+        borderRadius: const BorderRadius.all(
+          const Radius.circular(20),
+        ),
+      ),
       child: Material(
         child: InkWell(
-          borderRadius: BorderRadius.all(Radius.circular(20)),
+          borderRadius: const BorderRadius.all(const Radius.circular(20)),
           onTap: () {
-            try{
+            try {
               pressed(displayValue);
-            }catch (e){
+            } catch (e) {
               pressed();
             }
           },
